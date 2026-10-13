@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f8fb" />
+  <meta name="description" content="Explore the real side of entrepreneurship: learning through experiments, feedback, setbacks, teamwork, and the E-Cell journey." />
+  <meta property="og:title" content="Beyond the Founder: Building the Right Startup Team — E-Cell Journal" />
+  <meta property="og:description" content="How complementary skills, shared goals, and clear responsibilities help a startup team work better together." />
+  <meta property="og:type" content="article" />
+  <title>Beyond the Founder: Building the Right Startup Team | E-Cell Journal</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #647087;
+      --line: #e4e8f0;
+      --blue: #2859d6;
+      --blue-dark: #173b9c;
+      --blue-soft: #eaf0ff;
+      --max: 1120px;
+      --article: 740px;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(25, 42, 80, .07);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+
+    .topbar {
+      border-bottom: 1px solid rgba(228, 232, 240, .9);
+      background: rgba(247, 248, 251, .88);
+    }
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 12px;
+      font-size: .88rem;
+      letter-spacing: -.06em;
+    }
+    .nav-label {
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .nav-label:hover { color: var(--blue); }
+
+    .hero {
+      padding: 74px 0 44px;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      border: 1px solid #dce5ff;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    h1 {
+      max-width: 850px;
+      margin: 25px auto 18px;
+      font-size: clamp(2.55rem, 6.3vw, 5.1rem);
+      line-height: 1.04;
+      letter-spacing: -.075em;
+      font-weight: 850;
+    }
+    .subtitle {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      line-height: 1.7;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 16px;
+      margin-top: 27px;
+      color: var(--muted);
+      font-size: .83rem;
+      font-weight: 600;
+    }
+    .meta span + span::before {
+      content: "·";
+      margin-right: 16px;
+      color: #a4adbd;
+    }
+
+    .cover {
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      max-height: 410px;
+      aspect-ratio: 2.25 / 1;
+      margin: 12px auto 0;
+      border: 1px solid #bfd5cb;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 78% 23%, rgba(255,255,255,.95) 0 5%, transparent 5.4%),
+        radial-gradient(circle at 78% 23%, rgba(255,255,255,.22) 0 13%, transparent 13.5%),
+        linear-gradient(130deg, #153c35 0%, #387363 52%, #9bbbab 100%);
+      box-shadow: var(--shadow);
+    }
+    .cover::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -80px;
+      top: -240px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(255,255,255,.055), 0 0 0 75px rgba(255,255,255,.045), 0 0 0 120px rgba(255,255,255,.035);
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      width: 56%;
+      height: 2px;
+      right: 8%;
+      bottom: 23%;
+      transform: rotate(-26deg);
+      transform-origin: right center;
+      background: rgba(255,255,255,.55);
+    }
+    .cover-art {
+      position: absolute;
+      right: 16%;
+      top: 17%;
+      width: 170px;
+      height: 170px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.52);
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(5px);
+    }
+    .cover-art svg { width: 94px; height: 94px; }
+    .cover-caption {
+      position: absolute;
+      z-index: 1;
+      left: clamp(24px, 5.5vw, 62px);
+      bottom: clamp(25px, 5vw, 54px);
+      color: #fff;
+    }
+    .cover-caption small {
+      display: block;
+      margin-bottom: 8px;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.72);
+    }
+    .cover-caption strong {
+      display: block;
+      max-width: 460px;
+      font-size: clamp(1.55rem, 3.6vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -.055em;
+    }
+
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(0, var(--article)) 220px;
+      gap: 46px;
+      align-items: start;
+      justify-content: center;
+      padding: 58px 0 88px;
+    }
+    article {
+      min-width: 0;
+      padding: clamp(25px, 5vw, 58px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 10px 35px rgba(25, 42, 80, .035);
+    }
+    .intro {
+      margin: 0 0 30px;
+      padding: 0 0 28px;
+      border-bottom: 1px solid var(--line);
+      color: #34415a;
+      font-size: 1.13rem;
+      line-height: 1.85;
+    }
+    .intro strong { color: var(--ink); }
+    h2 {
+      margin: 38px 0 13px;
+      font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      line-height: 1.25;
+      letter-spacing: -.045em;
+    }
+    article p {
+      margin: 0 0 17px;
+      color: #465168;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+    .pullquote {
+      margin: 34px 0;
+      padding: 23px 25px;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 14px 14px 0;
+      background: #f2f5ff;
+      color: #203c84;
+      font-size: 1.12rem;
+      font-weight: 750;
+      line-height: 1.65;
+      letter-spacing: -.02em;
+    }
+    .end-note {
+      margin-top: 36px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 1.08rem;
+      font-weight: 750;
+      line-height: 1.8;
+    }
+
+    aside {
+      position: sticky;
+      top: 28px;
+      padding-top: 8px;
+    }
+    .side-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.75);
+    }
+    .side-title {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .toc { margin: 0; padding: 0; list-style: none; }
+    .toc li { margin: 0; }
+    .toc a {
+      display: block;
+      padding: 8px 0;
+      color: #4d5870;
+      font-size: .86rem;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+    .toc a:hover { color: var(--blue); }
+    .side-divider { height: 1px; margin: 18px 0; background: var(--line); }
+    .side-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.7;
+    }
+
+    .bottom-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 22px;
+      padding: 27px 30px;
+      border-radius: 18px;
+      background: #172b5d;
+      color: #fff;
+    }
+    .bottom-cta h2 {
+      margin: 0 0 5px;
+      font-size: 1.25rem;
+    }
+    .bottom-cta p {
+      margin: 0;
+      color: rgba(255,255,255,.72);
+      font-size: .9rem;
+    }
+    .back-top {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      color: #fff;
+      font-size: .85rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .back-top:hover { background: rgba(255,255,255,.1); }
+
+    footer {
+      padding: 26px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .82rem;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .footer-brand { color: var(--ink); font-weight: 800; }
+    .reading-progress {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--blue);
+    }
+
+    @media (max-width: 900px) {
+      .article-shell { grid-template-columns: minmax(0, var(--article)); }
+      aside { position: static; order: -1; }
+      .side-card { padding: 17px 20px; }
+      .toc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+      .side-divider, .side-note { display: none; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .nav { min-height: 66px; }
+      .nav-label { font-size: .78rem; }
+      .hero { padding: 48px 0 28px; }
+      h1 { margin-top: 20px; }
+      .meta { gap: 7px 10px; font-size: .76rem; }
+      .meta span + span::before { margin-right: 10px; }
+      .cover { min-height: 270px; aspect-ratio: 1.15 / 1; }
+      .cover-art { width: 120px; height: 120px; right: 9%; top: 13%; }
+      .cover-art svg { width: 70px; height: 70px; }
+      .cover-caption { left: 22px; bottom: 24px; }
+      .cover-caption strong { max-width: 250px; }
+      .article-shell { padding: 34px 0 58px; gap: 20px; }
+      article { padding: 25px 21px; border-radius: 18px; }
+      .intro { font-size: 1.04rem; }
+      article p { font-size: .97rem; }
+      .toc { grid-template-columns: 1fr; }
+      .toc a { padding: 6px 0; }
+      .bottom-cta { align-items: flex-start; flex-direction: column; padding: 23px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  .example-grid{display:grid;gap:14px;margin:24px 0}.example{padding:20px;border:1px solid var(--line);border-radius:14px;background:#f7f9ff}.example h3{margin:0 0 8px;font-size:1.05rem;line-height:1.4}.example p{margin:0}h2{scroll-margin-top:24px}@media(max-width:400px){.nav{gap:10px}.brand{font-size:.88rem;gap:8px}.brand-mark{width:30px;height:30px}.nav-label{font-size:.68rem}} </style>
+</head>
+<body id="top">
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Team Erroris — E-Cell Journal">
+        <span class="brand-mark">E</span>
+        <span>Team Erroris</span>
+      </a>
+      <a class="nav-label" href="#article" style="color:var(--blue-dark);font-weight:800">NEC ID: NEC2683357</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Blog 04 · Entrepreneurship</span>
+        <h1 id="page-title">Beyond the Founder: Building the Right Startup Team</h1>
+        <p class="subtitle">How complementary skills, shared goals, and clear responsibilities help a startup team work better together.</p>
+        <div class="meta" aria-label="Article details">
+          <span>E-Cell Blog Series</span>
+          <span>Student Innovation</span>
+          <span>Learning &amp; Growth</span>
+        </div>
+      </div>
+
+      <div class="cover" role="img" aria-label="Muted emerald illustration representing teamwork and a shared idea">
+        <div class="cover-art" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <path d="M50 13v10M50 77v10M13 50h10M77 50h10M24 24l7 7M69 69l7 7M76 24l-7 7M31 69l-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity=".75"/>
+            <path d="M35 43a15 15 0 1 1 30 0c0 6-3 9-7 13-2 2-3 4-3 7H45c0-3-1-5-3-7-4-4-7-7-7-13Z" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M45 70h10M46 76h8" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="m43 43 5 5 10-11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="cover-caption">
+          <small>Skills · Trust · Shared Purpose</small>
+          <strong>Different strengths. One shared direction.</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap article-shell">
+      <article id="article"><p class="intro">A founder may introduce an idea, but turning it into something useful often requires several kinds of work. Someone must understand customers, someone must develop the solution, and someone must make delivery practical. <strong>A strong startup team combines different strengths around a clear, shared goal.</strong></p>
+<p>For students, forming a team can feel straightforward: bring together friends who are excited about the idea. Friendship can help build trust, but enthusiasm alone does not settle questions about effort, responsibility, decisions, or ownership. Discussing those questions early gives the team a stronger foundation.</p>
+<h2 id="goal">1. Agree on What You Are Building Together</h2>
+<p>Before choosing titles, explain the problem you want to solve and the people you want to help. Make sure every member can describe the goal in similar terms. If one person wants a competition prototype and another wants a paying business, their expectations may conflict even when both care about the idea.</p>
+<p>Discuss what each person hopes to gain, what commitments they can realistically make, and which constraints matter. Academic work, other projects, and personal responsibilities affect what members can contribute. Honest expectations are more useful than ambitious promises nobody can maintain.</p>
+<h2 id="skills">2. Choose Complementary Skills</h2>
+<p>Start with the work your next experiment requires. A digital service may need customer research, design, development, and outreach. A physical product may also require specialised engineering, sourcing, or safety expertise. The right combination depends on the problem.</p>
+<div class="example-grid">
+<div class="example"><h3>Understanding users</h3><p>Someone should lead conversations with potential users, document their needs, and challenge assumptions about the solution.</p></div>
+<div class="example"><h3>Building and delivering</h3><p>Someone should turn the idea into a usable product or service and help the team understand what can be delivered reliably.</p></div>
+<div class="example"><h3>Communicating and organising</h3><p>Someone should explain the offer clearly, coordinate tasks, and keep track of practical commitments and costs.</p></div>
+</div>
+<p>These are responsibilities, not a requirement to recruit a separate person for every function. In a small team, members may handle several areas. Identify essential gaps before adding people simply to make the team look complete.</p>
+<div class="pullquote">The right teammate does not need to think exactly like you. They need to contribute, communicate, and care about the same problem.</div>
+<h2 id="trial">3. Work Together Before Making Big Commitments</h2>
+<p>A small shared task can reveal more than a list of skills. Try interviewing potential users, producing a sample, or building a simple prototype together. Notice whether members follow through, ask for help when needed, and respond constructively to feedback.</p>
+<p>Look beyond the final output. How did the team handle an unclear requirement? Did someone quietly take on all the work? Were decisions explained? These observations help you understand whether the collaboration is workable.</p>
+<p>A trial should have a clear scope and agreed expectations. Clarify how any work produced may be used, rather than assuming everyone understands ownership in the same way.</p>
+<h2 id="roles">4. Give Tasks Clear Owners</h2>
+<p>“Everyone will handle it” often leaves nobody responsible. Give each important task an owner, define the expected result, and make dependencies visible. Others can contribute, but the owner should know what they are accountable for.</p>
+<p>For example, one member can lead user interviews while another creates a prototype based on the findings. Agree on how insights will be shared so that the prototype reflects the research instead of developing separately from it.</p>
+<p>Use a simple shared task list that records the owner, next action, and status. Keep it practical. A complicated management system does not compensate for unclear responsibilities.</p>
+<h2 id="decisions">5. Decide How Decisions Will Be Made</h2>
+<p>Teams will disagree about features, pricing, design, and priorities. Decide which choices an individual can make, which need discussion, and how you will resolve a disagreement that remains.</p>
+<p>Connect arguments to the shared goal. If two design options are competing, ask which better helps the user complete the task. If evidence is missing, a small test may be more useful than another round of opinions.</p>
+<p>Make room for quieter members to contribute. A confident speaker should not automatically control every decision, and disagreement should not become a judgement of someone’s commitment or personality.</p>
+<h2 id="trust">6. Build Trust Through Clear Agreements</h2>
+<p>Trust grows when people do what they agreed to do and communicate when circumstances change. Raise problems before they become resentment. Discuss uneven workloads directly and adjust responsibilities when the original plan no longer fits.</p>
+<p>For a venture involving money or shared assets, record contributions, expenses, access permissions, and ownership expectations. Discuss how someone can leave and how their work will be handled. Keep important accounts accessible through agreed arrangements rather than relying entirely on one person.</p>
+<p>Where formal business ownership or significant commitments are involved, get appropriate professional help to create clear agreements. Avoid treating titles or informal promises as a substitute for an understood arrangement.</p>
+<h2 id="ecell">What This Means for Student Teams</h2>
+<p>E-Cell activities give students opportunities to practise collaboration on manageable projects. Team Erroris can apply these lessons by keeping goals clear, assigning meaningful responsibilities, and encouraging members to raise concerns and share ideas.</p>
+<p>A team becomes stronger when it reviews both its results and how it worked together. Celebrate useful contributions, learn from missed commitments, and change the process when it creates unnecessary confusion.</p>
+<p class="end-note">Building the right team means finding people whose strengths fit the work—and creating the clarity, trust, and shared responsibility
